@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chiikawa 漫画世界 - 故事</title>
+    <link rel="stylesheet" href="../css/style03.css">
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/b2.png" alt="Chiikawa Logo" class="main-logo" title="Chiikawa">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="characters.html">角色</a></li>
+                <li><a href="stories.html" class="active">故事</a></li>
+                <li><a href="products.html">联系</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 轮播图 -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="../images/a56.jpg" alt="Chiikawa 56">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a59.jpg" alt="Chiikawa 59">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a60.jpg" alt="Hachiware 5">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a61.jpg" alt="Hachiware 6">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a63.jpg" alt="Usagi 3">
+            </div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+        <div class="indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+            <span class="indicator" data-slide="4"></span>
+        </div>
+    </div>
+
+    <section class="content">
+        <h1>Chiikawa 故事人物</h1>
+        <div class="dom-controls">
+            <button id="create-btn" class="dom-btn">创建</button>
+            <button id="copy-btn" class="dom-btn">复制</button>
+            <button id="insert-before-btn" class="dom-btn">插入前</button>
+            <button id="insert-after-btn" class="dom-btn">插入后</button>
+            <button id="replace-btn" class="dom-btn">替换</button>
+            <button id="delete-btn" class="dom-btn">删除</button>
+        </div>
+        <div id="photo-container" class="photo-container">
+            <div class="photo-node" id="photo-1" data-photo="../images/a56.jpg">
+                <img src="../images/a56.jpg" alt="Chiikawa 56">
+                <div class="operation-indicators"></div>
+            </div>
+            <div class="photo-node" id="photo-2" data-photo="../images/a59.jpg">
+                <img src="../images/a59.jpg" alt="Chiikawa 59">
+                <div class="operation-indicators"></div>
+            </div>
+            <div class="photo-node" id="photo-3" data-photo="../images/a60.jpg">
+                <img src="../images/a60.jpg" alt="Hachiware 5">
+                <div class="operation-indicators"></div>
+            </div>
+            <div class="photo-node" id="photo-4" data-photo="../images/a61.jpg">
+                <img src="../images/a61.jpg" alt="Hachiware 6">
+                <div class="operation-indicators"></div>
+            </div>
+            <div class="photo-node" id="photo-5" data-photo="../images/a63.jpg">
+                <img src="../images/a63.jpg" alt="Usagi 3">
+                <div class="operation-indicators"></div>
+            </div>
+        </div>
+        <div id="chiikawa-notification" class="chiikawa-notification" style="display: none;">
+            <img src="../images/a3.jpg" alt="Hachiware" class="notification-img">
+            <span id="notification-text"></span>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 chiikawa漫画网站  230054470238董国旋. 保留所有权利。</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/animation03.js"></script>
+    <script src="../js/carousel03.js"></script>
+    <script src="../js/domOperations.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chiikawa 漫画世界 - 关于</title>
+    <link rel="stylesheet" href="../css/style01.css">
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/b2.png" alt="Chiikawa Logo" class="main-logo" title="Chiikawa">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html" class="active">关于</a></li>
+                <li><a href="characters.html">角色</a></li>
+                <li><a href="stories.html">故事</a></li>
+                <li><a href="products.html">联系</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <!-- 轮播图 -->
+   <div class="carousel-container">
+       <div class="carousel">
+           <div class="carousel-slide active">
+               <img src="../images/a15.jpg" alt="Chiikawa 1">
+           </div>
+           <div class="carousel-slide">
+               <img src="../images/a16.jpg" alt="Chiikawa 2">
+           </div>
+           <div class="carousel-slide">
+               <img src="../images/a20.jpg" alt="Hachiware 1">
+           </div>
+           <div class="carousel-slide">
+               <img src="../images/a21.jpg" alt="Hachiware 2">
+           </div>
+           <div class="carousel-slide">
+               <img src="../images/a32.jpg" alt="Usagi">
+           </div>
+       </div>
+       <button class="prev">❮</button>
+       <button class="next">❯</button>
+       <div class="indicators">
+           <span class="indicator active" data-slide="0"></span>
+           <span class="indicator" data-slide="1"></span>
+           <span class="indicator" data-slide="2"></span>
+           <span class="indicator" data-slide="3"></span>
+           <span class="indicator" data-slide="4"></span>
+       </div>
+   </div>
+
+
+    <!-- 内容区域 -->
+    <section class="content">
+  <section class="characters-container">
+  
+    <div class="character">
+      <div class="avatar-box" data-name="chiikawa吉伊" data-video="../videos/d2.mp4">
+        <img src="../images/c3.jpg" alt="chiikawa吉伊" class="avatar" />
+      </div>
+      <div class="info">
+        <a href="#" class="char-name" data-name="chiikawa吉伊" data-video="../videos/d2.mp4">
+          chiikawa吉伊
+        </a>
+        <p class="description">
+          ⭐️（chiikawa吉伊）我们的小仓鼠主角，是个爱哭鬼但是关键时刻特别勇敢。台词很少，基本使用行动和拟声词来表达。还好周围有很多善良友善的朋友帮助着他。为了除草五级不断学习中。
+        </p>
+      </div>
+    </div>
+  
+    <div class="character">
+      <div class="avatar-box" data-name="hachiware小八" data-video="../videos/d1.mp4">
+        <img src="../images/c1.jpg" alt="hachiware小八" class="avatar" />
+      </div>
+      <div class="info">
+        <a href="#" class="char-name" data-name="hachiware小八" data-video="../videos/d1.mp4">
+          hachiware小八
+        </a>
+        <p class="description">
+          ⭐️（hachiware小八）小八是猫咪，对待朋友很真诚，但是个话唠。主角团中唯一能完整使用人类语言说话的存在。除草5级。好奇心旺盛的乐天派，偶尔会露出天然的一面。
+        </p>
+      </div>
+    </div>
+  
+    <div class="character">
+      <div class="avatar-box" data-name="usagi乌萨奇" data-video="../videos/d3.mp4">
+        <img src="../images/c2.jpg" alt="usagi乌萨奇" class="avatar" />
+      </div>
+      <div class="info">
+        <a href="#" class="char-name" data-name="usagi乌萨奇" data-video="../videos/d3.mp4">
+          usagi乌萨奇
+        </a>
+        <p class="description">
+          ⭐️（usagi乌萨奇）乌萨奇是只小兔子，主角团之一，吉伊和哈奇的好朋友。十足的小吃货。是吉伊的第一个朋友。乌萨奇时常发出“咿呀哈”等怪声，直觉敏锐，自由奔放又神秘的存在。住所至今是谜，武器是两端能发射火药的棍子。
+        </p>
+      </div>
+    </div>
+  
+    <div class="character">
+      <div class="avatar-box" data-name="momonga莫莫咖" data-video="../videos/d4.mp4">
+        <img src="../images/c4.jpg" alt="momonga莫莫咖" class="avatar" />
+      </div>
+      <div class="info">
+        <a href="#" class="char-name" data-name="momonga莫莫咖" data-video="../videos/d4.mp4">
+          momonga莫莫咖
+        </a>
+        <p class="description">
+          ⭐️（momonga莫莫咖）莫莫咖是只飞鼠，其实它原本并不是飞鼠，是为了能够“尽情地装可爱”掠夺了他人的身体。虽然是有点坏坏的角色，但却因为可爱的外表而被很多人喜欢。
+        </p>
+      </div>
+    </div>
+  
+  </section>
+  
+  <!-- 弹窗结构 -->
+  <div id="char-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-content wide">
+      <div class="modal-header">
+        <div id="modal-title"></div>
+        <button class="close-btn" id="modal-close" aria-label="关闭弹窗">&times;</button>
+      </div>
+      <div class="modal-body">
+        <video id="modal-video" controls preload="none" src="" style="width: 100%; max-height: 400px; border-radius: 12px;"></video>
+      </div>
+    </div>
+  </div>
+
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025 chiikawa漫画网站  230054470238董国旋. 保留所有权利。</p>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/animation.js"></script>
+    <script src="../js/carousel01.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chiikawa 漫画世界 - 注册</title>
+    <link rel="stylesheet" href="../css/style05.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/b2.png" alt="Chiikawa Logo" class="main-logo" title="Chiikawa">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="characters.html">角色</a></li>
+                <li><a href="stories.html">故事</a></li>
+                <li><a href="products.html">联系</a></li>
+                <li><a href="register.html" class="active">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 轮播图 -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="../images/a49.jpg" alt="Chiikawa 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a50.jpg" alt="Chiikawa 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a51.jpg" alt="Hachiware 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a52.jpg" alt="Hachiware 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a54.jpg" alt="Usagi">
+            </div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+        <div class="indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+            <span class="indicator" data-slide="4"></span>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="form-container">
+            <h1>欢迎加入 Chiikawa 会员</h1>
+            <button class="modal-trigger" data-modal="register-modal">注册 Chiikawa 会员</button>
+            <button class="modal-trigger" data-modal="login-modal">登录 Chiikawa 会员</button>
+            <div id="user-info" class="user-info" style="display: none;">
+                <h2>用户信息</h2>
+                <div id="user-details"></div>
+            </div>
+        </div>
+        <div id="success-message" class="success-message" style="display: none;">登录成功</div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div id="register-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="modal-close">×</span>
+            <div class="modal-scroll">
+                <div class="form-box">
+                    <div class="form-header">
+                        <img src="../images/a49.jpg" alt="Chiikawa Form Header" class="form-img">
+                    </div>
+                    <h2>注册 Chiikawa 会员</h2>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input type="text" id="username" name="username" placeholder="请输入用户名">
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input type="password" id="password" name="password" placeholder="请输入密码">
+                            <button type="button" class="toggle-password">显示</button>
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">确认密码</label>
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="请再次输入密码">
+                            <button type="button" class="toggle-password">显示</button>
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthdate">生日</label>
+                            <input type="text" id="birthdate" name="birthdate" placeholder="选择生日">
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>喜欢的角色</label>
+                            <label><input type="radio" name="favorite-character" value="Chiikawa"> Chiikawa</label>
+                            <label><input type="radio" name="favorite-character" value="Hachiware"> Hachiware</label>
+                            <label><input type="radio" name="favorite-character" value="Usagi"> Usagi</label>
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="region">地区</label>
+                            <select id="region" name="region">
+                                <option value="">请选择地区</option>
+                                <option value="China">中国</option>
+                                <option value="Japan">日本</option>
+                                <option value="Other">其他</option>
+                            </select>
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="captcha">验证码</label>
+                            <input type="text" id="captcha" name="captcha" placeholder="请输入验证码">
+                            <span class="captcha-text"></span>
+                            <button type="button" class="refresh-captcha">刷新</button>
+                            <span class="error"></span>
+                        </div>
+                        <button type="submit" class="submit-btn">提交</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="modal-close">×</span>
+            <div class="form-box">
+                <div class="form-header">
+                    <img src="../images/a50.jpg" alt="Chiikawa Login Header" class="form-img">
+                </div>
+                <h2>登录 Chiikawa 会员</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-username">用户名</label>
+                        <input type="text" id="login-username" name="login-username" placeholder="请输入用户名">
+                        <span class="error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">密码</label>
+                        <input type="password" id="login-password" name="login-password" placeholder="请输入密码">
+                        <button type="button" class="toggle-password">显示</button>
+                        <span class="error"></span>
+                    </div>
+                    <button type="submit" class="submit-btn">登录</button>
+                    <div id="success-message" class="success-message" style="display: none;">登录成功</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 chiikawa漫画网站  230054470238董国旋. 保留所有权利。</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="../js/animation05.js"></script>
+    <script src="../js/carousel05.js"></script>
+</body>
+</html>

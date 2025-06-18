@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chiikawa 漫画世界 - 角色</title>
+    <link rel="stylesheet" href="../css/style02.css">
+    <link rel="icon" href="../images/favicon.ico">
+    <!-- Add jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/b2.png" alt="Chiikawa Logo" class="main-logo" title="Chiikawa">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html"">关于</a></li>
+                <li><a href="characters.html  class="active">角色</a></li>
+                <li><a href="stories.html">故事</a></li>
+                <li><a href="products.html">联系</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 轮播图 -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="../images/a6.jpg" alt="Chiikawa 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a.jpg" alt="Chiikawa 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a7.jpg" alt="Hachiware 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a21.jpg" alt="Hachiware 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="../images/a27.jpg" alt="Usagi">
+            </div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+        <div class="indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+            <span class="indicator" data-slide="4"></span>
+        </div>
+    </div>
+
+    <!-- Tabbed Interface -->
+    <section class="content">
+        <div class="tabs-container">
+            <ul class="tabs-list">
+                <li class="tab active" data-tab="tab1">chiikawa吉伊</li>
+                <li class="tab" data-tab="tab2">hachiware小八</li>
+                <li class="tab" data-tab="tab3">usagi乌萨奇</li>
+                <li class="tab" data-tab="tab4">momonga莫莫咖</li>
+            </ul>
+            <div class="tabs-content">
+                <div id="tab1" class="tab-pane active">
+                    <h2 class="tab-title">chiikawa吉伊</h2>
+                    <p class="tab-text">Chiikawa 是一个超级可爱的小生物，喜欢冒险和吃甜点！它总是带着一颗勇敢的心，和朋友们一起探索奇妙的世界。</p>
+                    <img src="../images/e1.jpg" alt="Chiikawa" class="tab-image">
+                    <img src="../images/e2.jpg" alt="Chiikawa 2" class="tab-image">
+                </div>
+                <div id="tab2" class="tab-pane">
+                    <h2 class="tab-title">hachiware小八</h2>
+                    <p class="tab-text">Hachiware 是 Chiikawa 的好朋友，是一只活泼的小猫咪。它喜欢唱歌和讲笑话，总是给朋友们带来欢乐。</p>
+                    <img src="../images/e7.jpg" alt="Hachiware" class="tab-image">
+                    <img src="../images/e8.jpg" alt="Hachiware 2" class="tab-image">
+                </div>
+                <div id="tab3" class="tab-pane">
+                    <h2 class="tab-title">usagi乌萨奇</h2>
+                    <p class="tab-text">Usagi 是一只神秘的小兔子，喜欢到处跳跃。它虽然不爱说话，但总是在关键时刻帮助朋友。</p>
+                    <img src="../images/e3.jpg" alt="Usagi" class="tab-image">
+					 <img src="../images/e4.jpg" alt="Hachiware 2" class="tab-image">
+                </div>
+                <div id="tab4" class="tab-pane">
+                    <h2 class="tab-title">momonga莫莫咖</h2>
+                    <p class="tab-text">momonga莫莫咖）莫莫咖是只飞鼠，其实它原本并不是飞鼠，是为了能够“尽情地装可爱”掠夺了他人的身体。</p>
+                    <img src="../images/e5.jpg" alt="World" class="tab-image">
+                    <img src="../images/e6.jpg" alt="World 2" class="tab-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025 chiikawa漫画网站  230054470238董国旋. 保留所有权利。</p>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="../js/animation01.js"></script>
+    <script src="../js/carousel.js"></script>
+</body>
+</html>

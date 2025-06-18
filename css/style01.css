@@ -1,0 +1,436 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 120px;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; }
+
+  .carousel-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      background-color: #fff;
+      aspect-ratio: 16 / 9; /* 自动保持图片比例 */
+  }
+  
+  .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .carousel-slide {
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* 关键，完整显示图片不裁切 */
+      border-radius: 15px;
+  }
+  
+  /* 按钮样式 */
+  .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .prev:hover, .next:hover {
+      background-color: #ff1493;
+  }
+  
+  .prev {
+      left: 20px;
+  }
+  .next {
+      right: 20px;
+  }
+  
+  /* 指示器 */
+  .indicators {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+  }
+  
+  .indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: #ffd1dc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  .indicator.active {
+      background-color: #ff69b4;
+  }
+  .indicator:hover {
+      background-color: #ff1493;
+  }
+
+/* 头部 */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffd1dc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+.main-logo {
+    width: 100px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    will-change: transform;
+}
+
+.main-logo:hover {
+    animation: pulse 1s ease-in-out infinite;
+    filter: brightness(1.2) saturate(1.5) hue-rotate(20deg);
+}
+
+header.scrolled .main-logo {
+    transform: scale(0.8);
+}
+
+header.scrolled .main-logo:hover {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1.0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1.0); }
+}
+
+.main-logo:hover::after {
+    content: 'Chiikawa';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff69b4;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.navbar {
+    width: 100%;
+    background-color: inherit;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0;
+    padding: 10px 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    color: #ff1493;
+    animation: float 0.5s ease-in-out infinite alternate;
+}
+
+.navbar a.active {
+    color: #ff69b4;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+/* 内容区域 */
+.content {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 3px solid #ff69b4;
+    border-radius: 15px;
+    position: relative;
+}
+
+.content h1 {
+    color: #ff69b4;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #6A6A74;
+    margin-bottom: 30px;
+}
+
+.content-img {
+    width: 300px;
+    height: auto;
+    border: 5px solid #ffd1dc;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.content-img:hover {
+    transform: scale(1.1);
+}
+
+/* 页脚 */
+footer {
+    background: url('../images/a82.jpg') no-repeat center center;
+    background-size: contain;
+    background-color: #ffd1dc;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+    min-height: 300px;
+    box-sizing: border-box;
+    transform: translateZ(0);
+    will-change: background;
+}
+
+footer p {
+    background-color: rgba(255, 209, 220, 0.8);
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 720px) {
+    .carousel {
+        width: 94%;
+        height: 500px;
+    }
+    .carousel-slide img {
+        height: 250px;
+    }
+    .content-img {
+        width: 100%;
+        max-width: 250px;
+    }
+    footer {
+        min-height: 200px;
+        padding: 20px 10px;
+        background-size: contain;
+    }
+    footer p {
+        font-size: 12px;
+    }
+    .indicator {
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+    }
+}
+/* 容器：垂直排列人物，居中且限定宽度 */
+.character {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #fff;
+  border: 2px solid #ff69b4;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.2);
+}
+
+.avatar-box {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%; /* 圆形头像 */
+  border: 3px solid #ff69b4;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* 圆形 */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.avatar-box:hover .avatar {
+  transform: scale(1.1);
+}
+
+.info {
+  flex: 1;
+}
+
+.char-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ff1493;
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline-block;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.char-name:hover {
+  color: #ff69b4;
+}
+
+/* 描述文字 */
+.description {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* 弹窗整体（默认隐藏） */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.7); /* 半透明黑色遮罩 */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 弹窗内容盒子 */
+.modal-content {
+    background: #fff;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 弹窗头部 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff69b4;
+    padding-bottom: 8px;
+}
+
+/* 弹窗标题 */
+#modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff1493;
+}
+
+/* 关闭按钮 */
+.close-btn {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff69b4;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ff1493;
+}
+
+/* 弹窗内容主体 */
+.modal-body {
+    font-size: 18px;
+    color: #444;
+}
+
+/* 弹窗内链接样式 */
+.modal-body a {
+    color: #ff1493;
+    text-decoration: underline;
+}
+
+.modal-body a:hover {
+    color: #ff69b4;
+}
+
+/* 响应式：手机端人物卡竖直排列 */
+@media (max-width: 720px) {
+    .character {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .avatar-box {
+        margin-bottom: 15px;
+    }
+}

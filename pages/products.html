@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiikawa 漫画世界 - 留言板 & 轮播</title>
+  <link rel="stylesheet" href="../css/style04.css">
+  <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="../images/b2.png" alt="Chiikawa Logo" class="main-logo"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a href="characters.html">角色</a></li>
+        <li><a href="stories.html">故事</a></li>
+        <li><a href="products.html" class="active">联系</a></li>
+        <li><a href="register.html">注册</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-slide active"><img src="../images/a39.jpg" alt=""></div>
+      <div class="carousel-slide"><img src="../images/a42.jpg" alt=""></div>
+      <div class="carousel-slide"><img src="../images/a43.jpg" alt=""></div>
+      <div class="carousel-slide"><img src="../images/a45.jpg" alt=""></div>
+      <div class="carousel-slide"><img src="../images/a46.jpg" alt=""></div>
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+    <div class="indicators">
+      <span class="indicator active" data-slide="0"></span>
+      <span class="indicator" data-slide="1"></span>
+      <span class="indicator" data-slide="2"></span>
+      <span class="indicator" data-slide="3"></span>
+      <span class="indicator" data-slide="4"></span>
+    </div>
+  </div>
+
+  <section class="message-section">
+    <h1 class="message-title">Chiikawa 留言板</h1>
+    <div id="message-board" class="message-board"></div>
+    <form class="message-form" id="message-form">
+      <div class="form-group">
+        <label for="nickname">昵称</label>
+        <input type="text" id="nickname" name="nickname" placeholder="请输入昵称" maxlength="20" required>
+      </div>
+      <div class="form-group">
+        <label for="role">选择角色</label>
+        <div class="avatar-preview">
+          <img id="avatar-preview-img" src="../images/c1.jpg" alt="Selected role avatar">
+          <select id="role" name="role" required>
+            <option value="chiikawa" data-img="../images/C3.jpg">Chiikawa</option>
+            <option value="usagi" data-img="../images/c2">Usagi</option>
+			  <option value="hachiware" data-img="../images/c1.jpg">Hachiware</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">留言内容</label>
+        <textarea id="message" name="message" placeholder="请输入留言内容（最多200字）" maxlength="200" required></textarea>
+        <p class="char-count">0 / 200</p>
+      </div>
+      <button type="submit" class="submit-button">提交留言</button>
+      <button type="button" id="undo-btn" class="undo-button" disabled>撤销删除</button>
+    </form>
+    <div id="chiikawa-notification" class="chiikawa-notification" style="display:none;">
+      <img src="../images/a7.jpg" class="notification-img" alt="提示">
+      <span id="notification-text"></span>
+    </div>
+    <div>
+      <button id="load-more-btn" class="load-more-btn" style="display:none;">加载更多</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>©2025 chiikawa漫画网站  230054470238董国旋. 保留所有权利。</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+  <script src="../js/animation04.js"></script>
+  <script src="../js/carousel04.js"></script>
+  <script src="../js/messageBoard.js"></script>
+</body>
+</html>
